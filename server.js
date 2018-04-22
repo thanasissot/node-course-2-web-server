@@ -20,10 +20,10 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  res.render('maintenance');
-  //if next() isnt used no other calls can connect
-});
+// app.use((req, res, next) => {
+//   res.render('maintenance');
+//   //if next() isnt used no other calls can connect
+// });
 
 // moved static here so it doesnt serve the files before
 // the maintenance page gets displayed
@@ -50,6 +50,12 @@ app.get('/', (req,res) => {
 app.get('/about', (req,res) => {
   res.render('about', {
     pageTitle: 'About Page'
+  });
+});
+
+app.get('/projects', (req, res) => {
+  res.render('projects', {
+    pageTitle: 'Projects'
   });
 });
 
